@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:test_app/src/screens/auth/auth_screen.dart';
+import 'package:test_app/src/screens/detail/detail_screen.dart';
+import 'package:test_app/src/screens/favourites/favourites_screen.dart';
+import 'package:test_app/src/screens/lenta/lenta_screen.dart';
 import 'package:test_app/src/screens/profile/profile_screen.dart';
 import 'package:test_app/src/screens/register/register_screen.dart';
 
@@ -10,9 +12,9 @@ class MainScreen extends StatelessWidget {
     return CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
           items: const [
-            BottomNavigationBarItem(icon: Icon(CupertinoIcons.home)),
+            BottomNavigationBarItem(icon: Icon(CupertinoIcons.bars)),
             BottomNavigationBarItem(icon: Icon(CupertinoIcons.gift)),
-            BottomNavigationBarItem(icon: Icon(CupertinoIcons.person)),
+            BottomNavigationBarItem(icon: Icon(CupertinoIcons.heart)),
             BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_circle)),
           ],
         ),
@@ -20,11 +22,11 @@ class MainScreen extends StatelessWidget {
           return CupertinoTabView(builder: (context) {
             switch (index) {
               case 0:
-                return const AuthScreen();
+                return const LentaScreen();
               case 1:
-                return const RegisterScreen();
+                return const DetailScreen();
               case 2:
-                return const AuthScreen();
+                return const FavouritesScreen();
               case 3:
                 return const ProfileScreen();
               default:
